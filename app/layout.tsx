@@ -11,7 +11,7 @@ const ibmPlexSerif = IBM_Plex_Serif({
 
 
 export const metadata: Metadata = {
-  title: "Horizon",
+  title: "Expenza",
   description: "It is modern way to track your expense",
   icons:{
     icon: '/icons/logo.svg'

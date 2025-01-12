@@ -1,35 +1,39 @@
-
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import BankCard from './BankCard'
 
-const RightSidebar = ({user, transactions, banks}: RightSidebarProps) => {
+const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
+  // console.log("User in RightSidebar:", user); // Debugging user object
+
   return (
-        <aside className="right-sidebar">
-          <section className="flex flex-col pb-8">
-            <div className="profile-banner" />
-            <div className="profile">
+    <aside className="right-sidebar">
+      <section className="flex flex-col pb-8">
+        <div className="profile-banner" />
+        <div className="profile">
           <div className="profile-img">
-            <span className="text-5xl font-bold text-blue-500">{user.firstName[0]}</span>
+            <span className="text-5xl font-bold text-blue-500">
+              {user?.name?.[0] || ''}
+            </span>
           </div>
 
           <div className="profile-details">
-            <h1 className='profile-name'>
-              {user.firstName} {user.lastName}
+            <h1 className="profile-name">
+              {user?.name || ''}
             </h1>
             <p className="profile-email">
-              {user.email}
+              {user?.email || ''}
             </p>
           </div>
         </div>
-          </section>
-          <section className="banks">
+      </section>
+
+      <section className="banks">
         <div className="flex w-full justify-between">
           <h2 className="header-2">My Banks</h2>
           <Link href="/" className="flex gap-2">
             <Image 
-               src="/icons/plus.svg"
+              src="/icons/plus.svg"
               width={20}
               height={20}
               alt="plus"
@@ -42,11 +46,11 @@ const RightSidebar = ({user, transactions, banks}: RightSidebarProps) => {
 
         {banks?.length > 0 && (
           <div className="relative flex flex-1 flex-col items-center justify-center gap-5">
-            <div className='relative z-10'>
+            <div className="relative z-10">
               <BankCard 
                 key={banks[0].$id}
                 account={banks[0]}
-                userName={`${user.firstName} ${user.lastName}`}
+                userName={user?.name || ''}
                 showBalance={false}
               />
             </div>
@@ -55,7 +59,7 @@ const RightSidebar = ({user, transactions, banks}: RightSidebarProps) => {
                 <BankCard 
                   key={banks[1].$id}
                   account={banks[1]}
-                  userName={`${user.firstName} ${user.lastName}`}
+                  userName={user?.name || ''}
                   showBalance={false}
                 />
               </div>
@@ -66,11 +70,15 @@ const RightSidebar = ({user, transactions, banks}: RightSidebarProps) => {
         <div className="mt-10 flex flex-1 flex-col gap-6">
           <h2 className="header-2">Top categories</h2>
 
-          
+          {/* <div className="space-y-5">
+            {categories.map((category, index) => (
+              <Category key={category.name} category={category} />
+            ))}
+          </div> */}
         </div>
       </section>
-        </aside>
-  )
-}
+    </aside>
+  );
+};
 
-export default RightSidebar
+export default RightSidebar;

@@ -6,6 +6,7 @@ import { sidebarLinks } from '@/constants'; // Make sure this file exists and is
 import { cn } from '@/lib/utils'; // Ensure `cn` is defined and imported correctly
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import Footer from './Footer';
 const Sidebar = ({ user }: SiderbarProps) => {
   const pathname = usePathname();
 
@@ -48,6 +49,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
           );
         })}
       </nav>
+      <Footer user={user}/>
     </section>
   );
 };
