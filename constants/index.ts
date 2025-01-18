@@ -17,9 +17,8 @@ export const sidebarLinks = [
   {
     imgURL: "/icons/money-send.svg",
     route: "/payment-transfer",
-    label: "Budgets",
+    label: "Transfer Funds",
   },
-  
 ];
 
 // good_user / good_password - Bank of America
@@ -127,6 +126,12 @@ export const transactionCategoryStyles = {
     borderColor: "border-[#12B76A]",
     backgroundColor: "bg-[#12B76A]",
     textColor: "text-[#027A48]",
+    chipBackgroundColor: "bg-[#ECFDF3]",
+  },
+  Travel: {
+    borderColor: "border-[#0047AB]",
+    backgroundColor: "bg-blue-500",
+    textColor: "text-blue-700",
     chipBackgroundColor: "bg-[#ECFDF3]",
   },
   default: {

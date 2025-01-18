@@ -1,101 +1,50 @@
 // import BankCard from '@/components/BankCard';
-// import HeaderBox from '@/components/HeaderBox';
-// // import { getAccounts } from '@/lib/actions/bank.actions'; // Uncomment when accounts data is available
+// import HeaderBox from '@/components/HeaderBox'
+// import { getAccounts } from '@/lib/actions/bank.action';
 // import { getLoggedInUser } from '@/lib/actions/user.actions';
-// import React from 'react';
-
-// // Updated Account type with all required properties
-// interface Account {
-//   id: string;
-//   availableBalance: number;
-//   currentBalance: number;
-//   officialName: string;
-//   mask: string;
-//   institutionId: string;
-//   name: string;
-//   type: string;
-//   subtype: string;
-//   appwriteItemId: string;
-//   sharableId: string;
-// }
+// import React from 'react'
 
 // const MyBanks = async () => {
 //   const loggedIn = await getLoggedInUser();
-//   // const accounts = await getAccounts({ 
-//   //   userId: loggedIn.$id 
-//   // })
-
-//   // Mock account data with all the required properties
-//   const accounts: Account[] = [
-//     {
-//       id: '1',
-//       availableBalance: 1000.00,
-//       currentBalance: 1200.50,
-//       officialName: 'Chase Bank',
-//       mask: '1234',
-//       institutionId: 'chase123',
-//       name: 'Chase Checking',
-//       type: 'Checking',
-//       subtype: 'Personal', // New property
-//       appwriteItemId: 'appwrite123', // New property
-//       sharableId: 'sharable123', // New property
-//     },
-//     {
-//       id: '2',
-//       availableBalance: 4500.00,
-//       currentBalance: 5000.75,
-//       officialName: 'Wells Fargo Bank',
-//       mask: '5678',
-//       institutionId: 'wellsfargo123',
-//       name: 'Wells Fargo Savings',
-//       type: 'Savings',
-//       subtype: 'Personal', // New property
-//       appwriteItemId: 'appwrite456', // New property
-//       sharableId: 'sharable456', // New property
-//     },
-//   ];
+//   const accounts = await getAccounts({ 
+//     userId: loggedIn.$id 
+//   })
 
 //   return (
-//     <section className="flex">
+//     <section className='flex'>
 //       <div className="my-banks">
-//         {/* Header Box Section */}
 //         <HeaderBox 
 //           title="My Bank Accounts"
-//           subtext="Effortlessly manage your banking activities."
+//           subtext="Effortlessly manage your banking activites."
 //         />
 
 //         <div className="space-y-4">
-//           {/* Title for User Cards Section */}
 //           <h2 className="header-2">
-//             Your Cards
+//             Your cards
 //           </h2>
-          
-//           {/* Bank Cards Section */}
 //           <div className="flex flex-wrap gap-6">
-//             {/* Map through accounts data and render BankCard components */}
-//             {accounts.map((account) => (
+//             {accounts && accounts.data.map((a: Account) => (
 //               <BankCard 
-//                 key={account.id}
-//                 account={account}
-//                 userName={loggedIn?.firstName || 'John Doe'} // Placeholder username if not available
+//                 key={accounts.id}
+//                 account={a}
+//                 userName={loggedIn?.firstName}
 //               />
 //             ))}
 //           </div>
 //         </div>
 //       </div>
 //     </section>
-//   );
+//   )
 // }
 
-// export default MyBanks;
-
+// export default MyBanks
 
 import React from 'react'
 
-const MyBank = () => {
+const page = () => {
   return (
-    <div>MyBank</div>
+    <div>page</div>
   )
 }
 
-export default MyBank
+export default page
